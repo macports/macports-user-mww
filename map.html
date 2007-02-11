@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="copyright" content="Markus Weissmann" />
+<meta name="author" content="Markus Weissmann" />
+<meta http-equiv="content-type" content=
+"text/html; charset=us-ascii" />
+<title>MacPorts Developers</title>
+</head>
+<body>
+<h2 id="id_developers_locations">MacPorts Developers Locations</h2>
+<script src="http://maps.google.com/maps?file=api&v=1&key=ABQIAAAA5HP32Y5kUf3iJ0ZPhQhMXBR3CdQj7cR9TjBrGtZFa91sBvPPthSEOD82Knrp2yPDBDN5Wib3QL0yZQ"
+type="text/javascript">
+</script>
+
+<div id="map" style="width: 1000px; height: 600px"></div>
+
+// Show map
+var map = new GMap(document.getElementById("map"));
+map.addControl(new GLargeMapControl());
+map.addControl(new GMapTypeControl());
+map.centerAndZoom(new GPoint(0, 10), 15);
+
+// Create marker icons
+var icons = new Object();
+icons['committers'] = new GIcon();
+icons['committers'].image = "http://labs.google.com/ridefinder/images/mm_20_blue.png";
+icons['committers'].shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png";
+icons['committers'].iconSize = new GSize(12, 20);
+icons['committers'].shadowSize = new GSize(22, 20);
+icons['committers'].iconAnchor = new GPoint(6, 20);
+icons['committers'].infoWindowAnchor = new GPoint(5, 1);
+
+// Place a marker
+function addMarker(point, name, mail, image) {
+    var marker = new GMarker(point, icons['commiters']);
+    map.addOverlay(marker);
+    GEvent.addListener(marker, "click", function() {
+            marker.openInfoWindowHtml("<img width='48' height='48' src='" + image + "'/>&nbsp;<a href=\"mailto:" + mail + "\"><tt>" + name + "</tt></a><br/>" + loc);
+            });
+}
+
+// Download data and show it
+var request = GXmlHttp.create();
+request.open("GET", "macports.markers.xml", true);
+request.onreadystatechange = function() {
+    if (request.readyState == 4) {
+        var xmlDoc = request.responseXML;
+        var markers = xmlDoc.documentElement.getElementsByTagName("marker");
+        for (var i = 0; i < markers.length; i++) {
+            var point = new GPoint(parseFloat(markers[i].getAttribute("long")),
+                    parseFloat(markers[i].getAttribute("lat")));
+            addMarker(point,
+                    markers[i].getAttribute("name"),
+                    markers[i].getAttribute("mail"),
+                    markers[i].getAttribute("image")
+                    );
+        }
+    }
+}
+request.send(null);
+
+</body>
+</html>

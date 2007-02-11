@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<markers>
+<!-- you need "lat", "long", "name", "mail", "image" attributes -->
+
+<marker lat="49.45903" long="11.09805" name="Markus W. Weissmann" mail="mww@macports.org" image="http://www.mweissmann.de/pics/m48.png" />
+<marker lat="52.529251" long="13.388085" name="" mail="pipping@macports.org" image="" />
+<marker lat="45.53375" long="-122.69855" name="" mail="jberry@macports.org" image="" />
+<marker lat="48.43" long="-68.37" name="" mail="yves@macports.org" image="" />
+</markers>
