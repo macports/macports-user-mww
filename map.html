@@ -16,6 +16,9 @@ type="text/javascript">
 
 <div id="map" style="width: 1000px; height: 600px"></div>
 
+<script type="text/javascript">
+//<![CDATA[
+
 // Show map
 var map = new GMap(document.getElementById("map"));
 map.addControl(new GLargeMapControl());
@@ -61,5 +64,9 @@ request.onreadystatechange = function() {
 }
 request.send(null);
 
+//]]>
+</script>
+
 </body>
 </html>
+
