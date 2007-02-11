@@ -36,11 +36,11 @@ icons['committers'].iconAnchor = new GPoint(6, 20);
 icons['committers'].infoWindowAnchor = new GPoint(5, 1);
 
 // Place a marker
-function addMarker(point, name, mail, image) {
+function addMarker(point, name, mail, image, aux) {
     var marker = new GMarker(point, icons['commiters']);
     map.addOverlay(marker);
     GEvent.addListener(marker, "click", function() {
-            marker.openInfoWindowHtml("<img width='48' height='48' src='" + image + "'/>&nbsp;<a href=\"mailto:" + mail + "\"><tt>" + name + "</tt></a><br/>" + loc);
+            marker.openInfoWindowHtml("<img width='48' height='48' src='" + image + "'/>&nbsp;<a href=\"mailto:" + mail + "\"><tt>" + name + "</tt></a><br/>" + aux);
             });
 }
 
@@ -57,7 +57,8 @@ request.onreadystatechange = function() {
             addMarker(point,
                     markers[i].getAttribute("name"),
                     markers[i].getAttribute("mail"),
-                    markers[i].getAttribute("image")
+                    markers[i].getAttribute("image"),
+                    ""
                     );
         }
     }
