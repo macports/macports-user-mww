@@ -39,6 +39,9 @@ icons['committers'].infoWindowAnchor = new GPoint(5, 1);
 function addMarker(point, name, mail, image, aux) {
     var marker = new GMarker(point, icons['commiters']);
     map.addOverlay(marker);
+	if ("" == image) {
+      image="take_it_tux48.png";
+    }
     GEvent.addListener(marker, "click", function() {
             marker.openInfoWindowHtml("<img width='48' height='48' src='" + image + "'/>&nbsp;<a href=\"mailto:" + mail + "\"><tt>" + name + "</tt></a><br/>" + aux);
             });
