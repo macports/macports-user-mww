@@ -8,7 +8,7 @@ images will get resized to 48x48, so best use images of this exact size
 <marker lat="49.45903" long="11.09805" name="Markus W. Weissmann" mail="mww@macports.org" image="images/mww.png" />
 <marker lat="52.529055" long="13.388761" name="Elias Pipping" mail="pipping@macports.org" image="" />
 <marker lat="45.53375" long="-122.69855" name="James Berry" mail="jberry@macports.org" image="images/jberry.jpg" />
-<marker lat="48.43" long="-68.37" name="" mail="yves@macports.org" image="" />
+<marker lat="48.241612" long="-68.383097" name="Yves de Champlain" mail="yves@macports.org" image="images/yves.png" />
 <marker lat="35.949" long="-79.024" name="Jeff Johnson" mail="n3npq@mac.com" image="images/jbj.jpg" />
 <marker lat="42.447528" long="-71.409411" name="Kevin Ballard" mail="eridius@macports.org" image="images/eridius.jpg" />
 <marker lat="10.496" long="-66.8982" name="Juan Manuel Palacios" mail="jmpp@macports.org" image="" />
