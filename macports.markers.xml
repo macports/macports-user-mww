@@ -19,6 +19,7 @@ images will get resized to 48x48, so best use images of this exact size
 <marker lat="48.877141" long="2.320703" name="Pierre Queinnec" mail="pmq@macports.org" image="images/pmq.png" />
 <marker lat="32.979875" long="-117.0708" name="Mark Grimes" mail="mgrimes@macports.org" image="images/mgrimes.jpg" />
 <marker lat="37.591366" long="-122.39321" name="Andre D. Stechert" mail="stechert@macports.org" image="images/andre.jpg" />
+<marker lat="60.18116" long="24.949195" name="Jyrki Wahlstedt" mail="jwa@macports.org" image="images/jwa.jpg" />
 
 </markers>
 
