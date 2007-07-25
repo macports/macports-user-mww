@@ -1,0 +1,13 @@
+prefix=@prefix@
+bindir=@prefix@/bin
+mandir=@mandir@
+name=@name@
+
+install:
+	install -m 755 -d $(DESTDIR)$(bindir)
+	install -m 755 -d $(DESTDIR)$(mandir)/man8
+	cat select.8 | sed "s|__PREFIX__|$(prefix)|g" | sed "s|__NAME__|$(name)|g" > $(DESTDIR)$(mandir)/man8/$(name)_select.8
+	chmod 444 $(DESTDIR)$(mandir)/man8/$(name)_select.8
+	cat select.sh | sed "s|__PREFIX__|$(prefix)|g" | sed "s|__NAME__|$(name)|g" > $(DESTDIR)$(prefix)/bin/$(name)_select
+	chmod 755 $(DESTDIR)$(bindir)/$(name)_select
+

@@ -1,0 +1,24 @@
+#!/bin/sh
+rm -f Makefile
+for i; do
+	echo "i: $i"
+	if [ "--prefix" = "$i" ]; then
+		shift;
+		prefix=${1}
+		shift;
+	elif [ "--mandir" = "$i" ]; then
+		shift;
+		mandir=${1}
+		shift;
+	elif [ "--name" = "$i" ]; then
+		shift;
+		name=${1}
+		shift;
+	fi
+done
+
+cat Makefile.in | \
+	sed "s|@prefix@|${prefix}|g" | \
+	sed "s|@mandir@|${mandir}|g" | \
+	sed "s|@name@|${name}|g" > Makefile
+
