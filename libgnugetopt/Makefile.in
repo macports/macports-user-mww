@@ -201,9 +201,10 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 lib_LTLIBRARIES = libgnugetopt.la
 libgnugetopt_la_SOURCES = getopt1.c getopt.c
-incdir = $(includedir)/gnugetopt
+incdir = $(includedir)
 inc_HEADERS = getopt.h
 doc_DATA = README
+EXTRA_DIST = autogen.sh
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
